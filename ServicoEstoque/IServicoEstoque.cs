@@ -40,7 +40,7 @@ namespace ServicoEstoque
         public string NomeProduto;
 
         [DataMember]
-        public decimal DescricaoProduto;
+        public string DescricaoProduto;
 
         [DataMember]
         public int EstoqueProduto;

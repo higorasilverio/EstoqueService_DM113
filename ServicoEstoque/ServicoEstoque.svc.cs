@@ -5,29 +5,186 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.ServiceModel.Activation;
+using EstoqueEntityModel;
 
 namespace ServicoEstoque
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
-    // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class Service1 : IServicoEstoque
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    public class ServicoEstoque : IServicoEstoque
     {
-        public string GetData(int value)
+        public bool AdicionarEstoque(string numeroProduto, int quantidade)
         {
-            return string.Format("You entered: {0}", value);
+            try
+            {
+                using (ProvedorEstoque database = new ProvedorEstoque())
+                {
+                    ProdutoEstoque produto = database.ProdutosEstoque.First(
+                        p => String.Compare(p.NumeroProduto, numeroProduto) == 0
+                    );
+
+                    produto.EstoqueProduto += quantidade;
+
+                    database.ProdutosEstoque.Add(produto);
+                    database.SaveChanges();
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public int ConsultarEstoque(string numeroProduto)
         {
-            if (composite == null)
+            int quantidadeTotal = 0;
+
+            try
             {
-                throw new ArgumentNullException("composite");
+                using (ProvedorEstoque database = new ProvedorEstoque())
+                {
+                    quantidadeTotal = (
+                        from p in database.ProdutosEstoque
+                        where String.Compare(p.NumeroProduto, numeroProduto) == 0
+                        select p.EstoqueProduto
+                        ).First();
+                }
             }
-            if (composite.BoolValue)
+            catch
             {
-                composite.StringValue += "Suffix";
+                throw new ArgumentException(
+                    String.Format("Algo deu errado ao consultar o estoque do produto número {0}!", numeroProduto)
+                );
             }
-            return composite;
+
+            return quantidadeTotal;
+        }
+
+        public bool IncluirProduto(Produto produto)
+        {
+            try
+            {
+                ProdutoEstoque produtoParaIncluir = new ProdutoEstoque()
+                {
+                    DescricaoProduto = produto.DescricaoProduto,
+                    EstoqueProduto = produto.EstoqueProduto,
+                    NomeProduto = produto.NomeProduto,
+                    NumeroProduto = produto.NumeroProduto
+                };
+
+                using (ProvedorEstoque database = new ProvedorEstoque())
+                {
+                    database.ProdutosEstoque.Add(produtoParaIncluir);
+                    database.SaveChanges();
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public List<string> Listarprodutos()
+        {
+            List<string> listaProdutos = new List<string>();
+
+            try
+            {
+                using (ProvedorEstoque database = new ProvedorEstoque())
+                {
+                    List<ProdutoEstoque> produtos = 
+                        (from NomeProduto in database.ProdutosEstoque select NomeProduto).ToList();
+
+                    foreach (ProdutoEstoque produto in produtos) listaProdutos.Add(produto.NomeProduto);
+                }
+            }
+            catch
+            {
+                throw new ArgumentException("Algo deu errado ao listar os produtos!");
+            }
+
+            return listaProdutos;
+        }
+
+        public bool RemoverEstoque(string numeroProduto, int quantidade)
+        {
+            try
+            {
+                using (ProvedorEstoque database = new ProvedorEstoque())
+                {
+                    ProdutoEstoque produto = database.ProdutosEstoque.First(
+                        p => String.Compare(p.NumeroProduto, numeroProduto) == 0
+                    );
+
+                    produto.EstoqueProduto -= quantidade;
+
+                    database.ProdutosEstoque.Add(produto);
+                    database.SaveChanges();
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public bool RemoverProduto(string numeroProduto)
+        {
+            try
+            {
+                using (ProvedorEstoque database = new ProvedorEstoque())
+                {
+                    ProdutoEstoque produto = database.ProdutosEstoque.First(
+                        p => String.Compare(p.NumeroProduto, numeroProduto) == 0
+                    );
+
+                    database.ProdutosEstoque.Remove(produto);
+                    database.SaveChanges();
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public Produto VerProduto(string numeroProduto)
+        {
+            Produto produto = null;
+
+            try
+            {
+                using (ProvedorEstoque database = new ProvedorEstoque())
+                {
+                    ProdutoEstoque produtoEncontrado = database.ProdutosEstoque.First(
+                        p => String.Compare(p.NumeroProduto, numeroProduto) == 0
+                    );
+
+                    produto = new Produto()
+                    {
+                        NumeroProduto = produtoEncontrado.NumeroProduto,
+                        DescricaoProduto = produtoEncontrado.DescricaoProduto,
+                        EstoqueProduto = produtoEncontrado.EstoqueProduto,
+                        NomeProduto = produtoEncontrado.NomeProduto
+                    };
+                }
+            }
+            catch
+            {
+                throw new ArgumentException(
+                    String.Format("Algo deu errado ao consultar o produto número {0}!", numeroProduto)
+                );
+            }
+
+            return produto;
         }
     }
 }
