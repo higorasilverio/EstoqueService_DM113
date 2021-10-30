@@ -19,13 +19,14 @@ namespace ServicoEstoque
             {
                 using (ProvedorEstoque database = new ProvedorEstoque())
                 {
-                    ProdutoEstoque produto = database.ProdutosEstoque.First(
-                        p => String.Compare(p.NumeroProduto, numeroProduto) == 0
-                    );
+                    int produtoId = (
+                        from p in database.ProdutosEstoque
+                        where String.Compare(p.NumeroProduto, numeroProduto) == 0
+                        select p.Id).First();
 
-                    produto.EstoqueProduto += quantidade;
+                    ProdutoEstoque produtoEstoque = database.ProdutosEstoque.First(p => p.Id == produtoId);
+                    produtoEstoque.EstoqueProduto += quantidade;
 
-                    database.ProdutosEstoque.Add(produto);
                     database.SaveChanges();
                 }
             }
@@ -116,13 +117,14 @@ namespace ServicoEstoque
             {
                 using (ProvedorEstoque database = new ProvedorEstoque())
                 {
-                    ProdutoEstoque produto = database.ProdutosEstoque.First(
-                        p => String.Compare(p.NumeroProduto, numeroProduto) == 0
-                    );
+                    int produtoId = (
+                        from p in database.ProdutosEstoque
+                        where String.Compare(p.NumeroProduto, numeroProduto) == 0
+                        select p.Id).First();
 
-                    produto.EstoqueProduto -= quantidade;
+                    ProdutoEstoque produtoEstoque = database.ProdutosEstoque.First(p => p.Id == produtoId);
+                    produtoEstoque.EstoqueProduto -= quantidade;
 
-                    database.ProdutosEstoque.Add(produto);
                     database.SaveChanges();
                 }
             }
