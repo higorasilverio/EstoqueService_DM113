@@ -8,7 +8,7 @@ namespace ServicoEstoque
     public interface IServicoEstoque
     {
         [OperationContract]
-        List<string> Listarprodutos();
+        List<string> ListarProdutos();
         
         [OperationContract]
         bool IncluirProduto(Produto produto);

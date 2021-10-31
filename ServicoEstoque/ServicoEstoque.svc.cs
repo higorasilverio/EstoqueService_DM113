@@ -89,7 +89,7 @@ namespace ServicoEstoque
             return true;
         }
 
-        public List<string> Listarprodutos()
+        public List<string> ListarProdutos()
         {
             List<string> listaProdutos = new List<string>();
 
