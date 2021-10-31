@@ -4,7 +4,7 @@ using System.Linq;
 using System.ServiceModel.Activation;
 using EstoqueEntityModel;
 
-namespace ServicoEstoque
+namespace Servico
 {
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class ServicoEstoque : IServicoEstoque
