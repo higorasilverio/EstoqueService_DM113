@@ -15,7 +15,11 @@ namespace ClienteEstoqueDesktop
 
         static void Main(string[] args)
         {
-            ServicoEstoqueClient proxy = new ServicoEstoqueClient();
+
+            Console.WriteLine("Pressione ENTER assim que o seriço tiver sido iniciado...");
+            Console.ReadLine();
+
+            ServicoEstoqueClient proxy = new ServicoEstoqueClient("Endpoint1");
 
             Console.WriteLine("Teste 01 - Adicionar um produto à lista de produtos: ");
             produtoInicial = new Produto()

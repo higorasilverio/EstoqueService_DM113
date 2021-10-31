@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5B2A9D17-F317-4183-BB4D-F9C89E375F9D}</ProjectGuid>
+    <ProjectGuid>{A38B0811-ABCE-4EA5-91B0-4FD04A792286}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BibliotecaServicoEstoque</RootNamespace>
-    <AssemblyName>BibliotecaServicoEstoque</AssemblyName>
+    <RootNamespace>EstoqueLibrary</RootNamespace>
+    <AssemblyName>EstoqueLibrary</AssemblyName>
     <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
