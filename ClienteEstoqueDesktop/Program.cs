@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.ServiceModel;
 using ClienteEstoqueDesktop.ServicoEstoque;
 
 namespace ClienteEstoqueDesktop
 {
     class Program
     {
+
         private static Produto produtoInicial;
         private static Produto produtoFinal;
         private static string numeroProduto;
@@ -34,15 +38,15 @@ namespace ClienteEstoqueDesktop
                     produtoFinal.NomeProduto
                 );
             }
-            else 
+            else
                 Console.WriteLine("Não foi possível incluir um produto!");
             Console.WriteLine();
 
             Console.WriteLine("Teste 02 - Remover um produto da lista de produtos: ");
             numeroProduto = "11000";
-            if (proxy.RemoverProduto(numeroProduto)) 
+            if (proxy.RemoverProduto(numeroProduto))
                 Console.WriteLine("Produto removido da lista: #{0}.", numeroProduto);
-            else 
+            else
                 Console.WriteLine("Não foi possível incluir um produto!");
             Console.WriteLine();
 
@@ -97,10 +101,9 @@ namespace ClienteEstoqueDesktop
                 Console.WriteLine("Não foi possível alterar o estoque do produto!");
             Console.WriteLine();
 
-            proxy.Close(); 
-            Console.WriteLine("Press ENTER to finish"); 
+            proxy.Close();
+            Console.WriteLine("Press ENTER to finish");
             Console.ReadLine();
-
         }
     }
 }

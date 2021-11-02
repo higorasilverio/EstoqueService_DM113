@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System.ServiceModel;
 
-namespace ServicoEstoque
+namespace Estoque
 {
     [ServiceContract]
     public interface IServicoEstoque
