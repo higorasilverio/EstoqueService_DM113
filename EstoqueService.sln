@@ -1,4 +1,3 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
@@ -7,14 +6,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueEntityModel", "Estoq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicoEstoque", "ServicoEstoque\ServicoEstoque.csproj", "{863FDC16-3913-4DCB-86C8-A6CB1544D049}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteEstoqueDesktop", "ClienteEstoqueDesktop\ClienteEstoqueDesktop.csproj", "{884C7B88-F77E-46DA-8B75-34A91EE66895}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteEstoqueDesktop", "ClienteEstoqueDesktop\ClienteEstoqueDesktop.csproj", "{264EB5E8-D534-4B55-ACA0-5FFE92964A0E}"
 	ProjectSection(ProjectDependencies) = postProject
 		{863FDC16-3913-4DCB-86C8-A6CB1544D049} = {863FDC16-3913-4DCB-86C8-A6CB1544D049}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueLibrary", "EstoqueLibrary\EstoqueLibrary.csproj", "{A38B0811-ABCE-4EA5-91B0-4FD04A792286}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueLibrary", "EstoqueLibrary\EstoqueLibrary.csproj", "{BFB8A6FF-55D3-4FDD-8398-CFDC4EF6E438}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvedorEstoqueHost", "ProvedorEstoqueHost\ProvedorEstoqueHost.csproj", "{60E5B1B8-28B7-4F62-860C-4D69FB36E65F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvedorEstoqueHost", "ProvedorEstoqueHost\ProvedorEstoqueHost.csproj", "{1645DC02-CA14-4A3A-8F97-F6DC20DAC3C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,18 +29,18 @@ Global
 		{863FDC16-3913-4DCB-86C8-A6CB1544D049}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{863FDC16-3913-4DCB-86C8-A6CB1544D049}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{863FDC16-3913-4DCB-86C8-A6CB1544D049}.Release|Any CPU.Build.0 = Release|Any CPU
-		{884C7B88-F77E-46DA-8B75-34A91EE66895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{884C7B88-F77E-46DA-8B75-34A91EE66895}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{884C7B88-F77E-46DA-8B75-34A91EE66895}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{884C7B88-F77E-46DA-8B75-34A91EE66895}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A38B0811-ABCE-4EA5-91B0-4FD04A792286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A38B0811-ABCE-4EA5-91B0-4FD04A792286}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A38B0811-ABCE-4EA5-91B0-4FD04A792286}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A38B0811-ABCE-4EA5-91B0-4FD04A792286}.Release|Any CPU.Build.0 = Release|Any CPU
-		{60E5B1B8-28B7-4F62-860C-4D69FB36E65F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60E5B1B8-28B7-4F62-860C-4D69FB36E65F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60E5B1B8-28B7-4F62-860C-4D69FB36E65F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60E5B1B8-28B7-4F62-860C-4D69FB36E65F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{264EB5E8-D534-4B55-ACA0-5FFE92964A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264EB5E8-D534-4B55-ACA0-5FFE92964A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264EB5E8-D534-4B55-ACA0-5FFE92964A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264EB5E8-D534-4B55-ACA0-5FFE92964A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFB8A6FF-55D3-4FDD-8398-CFDC4EF6E438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFB8A6FF-55D3-4FDD-8398-CFDC4EF6E438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFB8A6FF-55D3-4FDD-8398-CFDC4EF6E438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFB8A6FF-55D3-4FDD-8398-CFDC4EF6E438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1645DC02-CA14-4A3A-8F97-F6DC20DAC3C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1645DC02-CA14-4A3A-8F97-F6DC20DAC3C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1645DC02-CA14-4A3A-8F97-F6DC20DAC3C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1645DC02-CA14-4A3A-8F97-F6DC20DAC3C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

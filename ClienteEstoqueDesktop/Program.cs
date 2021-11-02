@@ -1,6 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.ServiceModel;
 using ClienteEstoqueDesktop.ServicoEstoque;
 
@@ -8,13 +10,18 @@ namespace ClienteEstoqueDesktop
 {
     class Program
     {
+        private static Produto produtoInicial;
+        private static Produto produtoFinal;
+        private static string numeroProduto;
+        private static List<string> listaNomesProdutos;
+        private static int quantidade;
+
         static void Main(string[] args)
         {
-
-            Console.WriteLine("Pressione ENTER assim que o serviço tiver sido iniciado...");
+            Console.WriteLine("Pressione ENTER quando o servidor estiver rodando..."); 
             Console.ReadLine();
 
-            ServicoEstoqueClient proxy = new ServicoEstoqueClient("Endpoint1");
+            ServicoEstoqueClient proxy = new ServicoEstoqueClient("BasicHttpBinding_IServicoEstoque");
 
             Console.WriteLine("Teste 01 - Adicionar um produto à lista de produtos: ");
             Produto produto01 = new Produto()
@@ -34,15 +41,15 @@ namespace ClienteEstoqueDesktop
                     produtoFinal.NomeProduto
                 );
             }
-            else 
+            else
                 Console.WriteLine("Não foi possível incluir um produto!");
             Console.WriteLine();
 
             Console.WriteLine("Teste 02 - Remover um produto da lista de produtos: ");
-            string numeroProduto = "11000";
-            if (proxy.RemoverProduto(numeroProduto)) 
+            numeroProduto = "11000";
+            if (proxy.RemoverProduto(numeroProduto))
                 Console.WriteLine("Produto removido da lista: #{0}.", numeroProduto);
-            else 
+            else
                 Console.WriteLine("Não foi possível incluir um produto!");
             Console.WriteLine();
 
@@ -97,10 +104,9 @@ namespace ClienteEstoqueDesktop
                 Console.WriteLine("Não foi possível alterar o estoque do produto!");
             Console.WriteLine();
 
-            proxy.Close(); 
-            Console.WriteLine("Press ENTER to finish"); 
+            proxy.Close();
+            Console.WriteLine("Press ENTER to finish");
             Console.ReadLine();
-
         }
     }
 }

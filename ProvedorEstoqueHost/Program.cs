@@ -1,6 +1,10 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.ServiceModel;
-using Servico;
+using Estoque;
 
 namespace ProvedorEstoqueHost
 {
@@ -8,13 +12,13 @@ namespace ProvedorEstoqueHost
     {
         static void Main(string[] args)
         {
-            ServiceHost provedorServicoEstoque = new ServiceHost(typeof(ServicoEstoque));
-            provedorServicoEstoque.Open();
-            Console.WriteLine("O serviço está rodando...");
+            ServiceHost provedorEstoqueHost = new ServiceHost(typeof(ServicoEstoque));
+            provedorEstoqueHost.Open();
+            Console.WriteLine("O servidor está rodando...");
 
             Console.ReadLine();
-            Console.WriteLine("O serviço está sendo encerrado...");
-            provedorServicoEstoque.Close();
+            Console.WriteLine("O servidor está sendo desligado...");
+            provedorEstoqueHost.Close();
         }
     }
 }

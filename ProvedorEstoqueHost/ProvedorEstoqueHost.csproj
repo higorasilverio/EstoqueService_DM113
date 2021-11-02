@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60E5B1B8-28B7-4F62-860C-4D69FB36E65F}</ProjectGuid>
+    <ProjectGuid>{1645DC02-CA14-4A3A-8F97-F6DC20DAC3C5}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>ProvedorEstoqueHost</RootNamespace>
     <AssemblyName>ProvedorEstoqueHost</AssemblyName>
@@ -62,8 +62,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\EstoqueLibrary\EstoqueLibrary.csproj">
-      <Project>{a38b0811-abce-4ea5-91b0-4fd04a792286}</Project>
+      <Project>{bfb8a6ff-55d3-4fdd-8398-cfdc4ef6e438}</Project>
       <Name>EstoqueLibrary</Name>
     </ProjectReference>
   </ItemGroup>
