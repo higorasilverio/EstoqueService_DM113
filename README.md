@@ -14,7 +14,7 @@
 
 #### Instruções para teste
 
-1. Faça o clone do repositório utilizando o bash `git clone https://github.com/higorasilverio/EstoqueService_DM113.git`
+1. Clone do repositório: `git clone https://github.com/higorasilverio/EstoqueService_DM113.git`
 2. Dentro da pasta clonada, abra o arquivo **_EstoqueService.sln_** com o Visual Code 2019
 3. Na barra de tarefas do Visual Code 2019, selecione **_Build_** e então **_Build Solution_**, **_Rebuild Solution_** ou apenas **_Ctrl+Shift+B_**
 4. Na aba de **_Solution Explorer_**, clique com o botão direito sobre a solução **_EstoqueService_** e vá na opção **_Set Startup Projects..._**
