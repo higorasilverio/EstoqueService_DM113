@@ -7,7 +7,7 @@ using EstoqueEntityModel;
 namespace Estoque
 {
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
-    public class ServicoEstoque : IServicoEstoque
+    public class ServicoEstoque : IServicoEstoque, IServicoEstoqueV2
     {
         public bool AdicionarEstoque(string numeroProduto, int quantidade)
         {
