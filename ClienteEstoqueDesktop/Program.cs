@@ -1,20 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ServiceModel;
-using ClienteEstoqueDesktop.ServicoEstoque;
+using Estoque.ServicoEstoque;
 
 namespace ClienteEstoqueDesktop
 {
     class Program
     {
-        private static Produto produtoInicial;
-        private static Produto produtoFinal;
         private static string numeroProduto;
-        private static List<string> listaNomesProdutos;
-        private static int quantidade;
 
         static void Main(string[] args)
         {
