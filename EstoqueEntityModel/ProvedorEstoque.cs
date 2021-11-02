@@ -5,9 +5,7 @@ namespace EstoqueEntityModel
 {
     public class ProvedorEstoque : DbContext
     {
-
-        public ProvedorEstoque()
-            : base("name=ProvedorEstoque")
+        public ProvedorEstoque() : base("name=ProvedorEstoque")
         {
         }
 

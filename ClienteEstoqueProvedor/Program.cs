@@ -14,6 +14,7 @@ namespace ClienteEstoqueProvedor
             {
                 Console.WriteLine("PROVEDOR DE SERVIÇO DE VENDAS");
                 Console.WriteLine();
+
                 Console.WriteLine("Pressione ENTER quando o servidor estiver rodando...");
                 Console.ReadLine();
 

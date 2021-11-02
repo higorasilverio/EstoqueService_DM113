@@ -18,6 +18,7 @@ namespace ClienteEstoqueDesktop
             {
                 Console.WriteLine("APLICAÇÃO CLIENTE DESKTOP");
                 Console.WriteLine();
+
                 Console.WriteLine("Pressione ENTER quando o servidor estiver rodando...");
                 Console.ReadLine();
 
