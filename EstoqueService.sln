@@ -10,6 +10,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstoqueLibrary", "EstoqueLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProvedorEstoqueHost", "ProvedorEstoqueHost\ProvedorEstoqueHost.csproj", "{1645DC02-CA14-4A3A-8F97-F6DC20DAC3C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteEstoqueProvedor", "ClienteEstoqueProvedor\ClienteEstoqueProvedor.csproj", "{6F4CEEF8-CD4D-48D1-873C-90B321CF312C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BFB8A6FF-55D3-4FDD-8398-CFDC4EF6E438} = {BFB8A6FF-55D3-4FDD-8398-CFDC4EF6E438}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +37,10 @@ Global
 		{1645DC02-CA14-4A3A-8F97-F6DC20DAC3C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1645DC02-CA14-4A3A-8F97-F6DC20DAC3C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1645DC02-CA14-4A3A-8F97-F6DC20DAC3C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F4CEEF8-CD4D-48D1-873C-90B321CF312C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F4CEEF8-CD4D-48D1-873C-90B321CF312C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F4CEEF8-CD4D-48D1-873C-90B321CF312C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F4CEEF8-CD4D-48D1-873C-90B321CF312C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
