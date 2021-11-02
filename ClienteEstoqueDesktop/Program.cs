@@ -22,7 +22,7 @@ namespace ClienteEstoqueDesktop
             Console.WriteLine("Pressione ENTER quando o servidor estiver rodando..."); 
             Console.ReadLine();
 
-            ServicoEstoqueClient proxy = new ServicoEstoqueClient("NetTcpBinding_IServicoEstoque");
+            ServicoEstoqueClient proxy = new ServicoEstoqueClient("BasicHttpBinding_IServicoEstoque");
 
             Console.WriteLine("Teste 01 - Adicionar um produto à lista de produtos: ");
             produtoInicial = new Produto()
