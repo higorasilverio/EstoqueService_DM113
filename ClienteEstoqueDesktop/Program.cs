@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,6 @@ namespace ClienteEstoqueDesktop
 {
     class Program
     {
-
         private static Produto produtoInicial;
         private static Produto produtoFinal;
         private static string numeroProduto;
@@ -25,16 +24,17 @@ namespace ClienteEstoqueDesktop
             ServicoEstoqueClient proxy = new ServicoEstoqueClient("BasicHttpBinding_IServicoEstoque");
 
             Console.WriteLine("Teste 01 - Adicionar um produto à lista de produtos: ");
-            produtoInicial = new Produto()
+            Produto produto01 = new Produto()
             {
-                DescricaoProduto = "Este é o produto 11",
-                EstoqueProduto = 11000,
+                DescricaoProduto = "Teste",
+                EstoqueProduto = 100,
                 NomeProduto = "Produto 11",
                 NumeroProduto = "11000"
             };
-            if (proxy.IncluirProduto(produtoInicial))
+
+            if (proxy.IncluirProduto(produto01))
             {
-                produtoFinal = proxy.VerProduto("11000");
+                Produto produtoFinal = proxy.VerProduto("11000");
                 Console.WriteLine(
                     "Produto incluso à lista #{0}: {1}.",
                     produtoFinal.NumeroProduto,
@@ -54,13 +54,13 @@ namespace ClienteEstoqueDesktop
             Console.WriteLine();
 
             Console.WriteLine("Teste 03 - Listar todos os produtos: ");
-            listaNomesProdutos = proxy.ListarProdutos().ToList();
+            List<string> listaNomesProdutos = proxy.ListarProdutos().ToList();
             foreach (string nomeProduto in listaNomesProdutos) Console.WriteLine("Produto: {0}", nomeProduto);
             Console.WriteLine();
 
             Console.WriteLine("Teste 04 - Verificar as informações de um produto: ");
             numeroProduto = "2000";
-            produtoInicial = proxy.VerProduto(numeroProduto);
+            Produto produtoInicial = proxy.VerProduto(numeroProduto);
             Console.WriteLine("Nome do produto: {0};", produtoInicial.NomeProduto);
             Console.WriteLine("Número do produto: {0};", produtoInicial.NumeroProduto);
             Console.WriteLine("Descrição do produto: {0};", produtoInicial.DescricaoProduto);
@@ -70,7 +70,7 @@ namespace ClienteEstoqueDesktop
             Console.WriteLine("Teste 05 - Adicionar estoque a um produto e verificar quantidade resultante: ");
             if (proxy.AdicionarEstoque(numeroProduto, 10))
             {
-                quantidade = proxy.ConsultarEstoque(numeroProduto);
+                int quantidade = proxy.ConsultarEstoque(numeroProduto);
                 Console.WriteLine(
                     "Estoque para o produto #{0} alterado. Quantidade atual do estoque: {1}.",
                     numeroProduto,
@@ -93,7 +93,7 @@ namespace ClienteEstoqueDesktop
             Console.WriteLine("Teste 07 - Remover estoque de um produto e verificar quantidade restante: ");
             if (proxy.RemoverEstoque(numeroProduto, 20))
             {
-                quantidade = proxy.ConsultarEstoque(numeroProduto);
+                int quantidade = proxy.ConsultarEstoque(numeroProduto);
                 Console.WriteLine(
                     "Estoque para o produto #{0} alterado. Quantidade atual do estoque: {1}.",
                     numeroProduto,
